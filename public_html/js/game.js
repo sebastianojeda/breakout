@@ -1,7 +1,7 @@
     
 /* Game namespace */
 var game = {
-
+  
 	// an object where to store game information
 	data : {
 		// score
@@ -61,4 +61,6 @@ var game = {
                 // Change the state of the game to PLAY
 		me.state.change(me.state.PLAY);
 	}
+        
+ 
 };

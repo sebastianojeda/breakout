@@ -3,10 +3,14 @@ game.PlayScreen = me.ScreenObject.extend({
 	 *  action to perform on state change
 	 */
 	onResetEvent: function() {
+            
+            game.data.lives = 3;
+            game.data.score = 0;
+	    game.data.level = -1;
+		// # bricks in the level
+	    game.data.bricks = 0;
 		// reset the score
-		game.data.score = 0;
-                
-
+	    game.data.score = 0;
                 
                 // *** App Academy ***
                 // Load the level you created in the program Tiled
@@ -24,7 +28,7 @@ game.PlayScreen = me.ScreenObject.extend({
 		this.HUD = new game.HUD.Container();
                 
 		me.game.world.addChild(this.HUD);
-	},
+},
 
 
 	/**
@@ -33,15 +37,15 @@ game.PlayScreen = me.ScreenObject.extend({
 	onDestroyEvent: function() {
 		// remove the HUD from the game world
 		me.game.world.removeChild(this.HUD);
-	},
+},
                 
         update: function() { 
            if (brickList. length === 0) {
                console.log(brickList.length);
                 me.levelDirector.nextLevel();
-               me.levelDirector.loadLevel("level06");
+                me.levelDirector.loadLevel("level06");
             
-           }
+  }
 
 }        
         

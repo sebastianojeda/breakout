@@ -38,6 +38,8 @@ game.resources = [
          {name:"level06", type:"tmx", src:"data/map/level06.tmx"},
          {name:"level07", type:"tmx", src:"data/map/level07.tmx"},
          {name:"level08", type:"tmx", src:"data/map/level08.tmx"},
+         {name:"level09", type:"tmx", src:"data/map/level09.tmx"},
+         {name:"level010", type:"tmx", src:"data/map/level010.tmx"},
 
 	/* Background music. 
 	 * @example
@@ -48,5 +50,5 @@ game.resources = [
 	 * @example
 	 * {name: "example_sfx", type: "audio", src: "data/sfx/", channel : 2}
 	 */
-        {name: "paddle-sfx", type:"audio", src:"data/sfx/", channel : 1}
+        {name: "paddle-sfx", type:"audio", src:"data/sfx/", channel : 2}
 ];
