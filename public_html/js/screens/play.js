@@ -2,6 +2,9 @@ game.PlayScreen = me.ScreenObject.extend({
 	/**
 	 *  action to perform on state change
 	 */
+        init: function() {
+          this.parent(true);  
+        },
 	onResetEvent: function() {
             
             game.data.lives = 3;
@@ -14,13 +17,11 @@ game.PlayScreen = me.ScreenObject.extend({
                 
                 // *** App Academy ***
                 // Load the level you created in the program Tiled
-                me.levelDirector.loadLevel("level05");
+                me.levelDirector.loadLevel("level02");
                 
                 var ball = new game.BallEntity (40, 30, {});
                 me.game.add(ball, 4);
                 
-                var brickList = me.game.getEntityByName("brick");         
-                console.log(brickList.length);
                 
                 
                 
@@ -39,18 +40,25 @@ game.PlayScreen = me.ScreenObject.extend({
 		me.game.world.removeChild(this.HUD);
 },
                 
-        update: function() { 
-           if (brickList. length === 0) {
+        update: function() {
+            var brickList = me.game.getEntityByName("brick");
+           
+            if (brickList.length === 0) {
                console.log(brickList.length);
                 me.levelDirector.nextLevel();
                 me.levelDirector.loadLevel("level06");
-            
-  }
+           }
 
-}        
+},     
         
-        
-        
+    countBrick: function (type) {
+		game.data.bricks -=1;
+		if (game.data.bricks === 0) {
+			// all balls should be deactivated
+			game.ball.active = false;
+			this.nextLevel();
+		}
+	}    
         
         
         
