@@ -14,7 +14,10 @@ game.PlayScreen = me.ScreenObject.extend({
 	    game.data.bricks = 0;
 		// reset the score
 	    game.data.score = 0;
-                
+            
+               // setup a callback
+      me.loader.onProgress = this.onProgressUpdate.bind(this);
+      
                 // *** App Academy ***
                 // Load the level you created in the program Tiled
                 me.levelDirector.loadLevel("level02");
