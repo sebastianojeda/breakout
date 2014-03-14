@@ -1,4 +1,3 @@
-    
 /* Game namespace */
 var game = {
   
@@ -55,7 +54,7 @@ var game = {
                 
                 me.entityPool.add("paddle",game.PaddleEntity);
                 me.entityPool.add("brick",game.BrickEntity);
-                 me.entityPool.add("ball",game.BallEntity);
+                me.entityPool.add("ball",game.BallEntity);
 
 		// *** App Academy ***
                 // Change the state of the game to PLAY

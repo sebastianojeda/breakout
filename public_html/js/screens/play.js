@@ -15,9 +15,8 @@ game.PlayScreen = me.ScreenObject.extend({
 		// reset the score
 	    game.data.score = 0;
             
-               // setup a callback
-      me.loader.onProgress = this.onProgressUpdate.bind(this);
-      
+        
+            
                 // *** App Academy ***
                 // Load the level you created in the program Tiled
                 me.levelDirector.loadLevel("level02");
@@ -44,12 +43,27 @@ game.PlayScreen = me.ScreenObject.extend({
 },
                 
         update: function() {
-            var brickList = me.game.getEntityByName("brick");
+            brickList = me.game.getEntityByName("brick");
+            console.log(brickList.length);
            
             if (brickList.length === 0) {
                console.log(brickList.length);
                 me.levelDirector.nextLevel();
+                me.levelDirector.loadLevel("level03");
+                me.levelDirector.nextLevel();
+                me.levelDirector.loadLevel("level04");
+                me.levelDirector.nextLevel();
+                me.levelDirector.loadLevel("level05");
+                me.levelDirector.nextLevel();
                 me.levelDirector.loadLevel("level06");
+                me.levelDirector.nextLevel();
+                me.levelDirector.loadLevel("level07");
+                me.levelDirector.nextLevel();
+                me.levelDirector.loadLevel("level08");
+                me.levelDirector.nextLevel();
+                me.levelDirector.loadLevel("level09");
+                me.levelDirector.nextLevel();
+                me.levelDirector.loadLevel("level010");
            }
 
 },     
